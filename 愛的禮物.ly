@@ -173,6 +173,8 @@ right = \relative c' {
   r4 r8 d' <a' d>4 <d, a'>
   r4 r8 c <g' c>4 <c, g'>
   r4 r8 c <e a>4 <a, d>
+
+  % P4
   b4. d8 <b g'>4 <d a'>
   <g b>4. d8 g fis e d
   c4. e8 <d g>4 c
@@ -185,6 +187,8 @@ right = \relative c' {
   <b d>4. d,8 g a b c
   << { b4 a2 g4 } \\ { c,2 e } >>
   d4. g8 <d a'>4 <g b>
+
+  % P5
   << {
     d4 c e g
     g4 fis e d
