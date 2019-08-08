@@ -196,7 +196,7 @@ right = \relative c' {
   } \\ {
     a2 c
     d2 e4 d
-    \change Staff = "left" a8 b a g
+    \change Staff = "left" \stemUp a8 b a g \stemNeutral
     \change Staff = "right" g2
   } >>
   b4. d8 <a' d>4 <d, a'>
