@@ -20,7 +20,7 @@ unisonVoice = \relative c' {
   \global
   \dynamicUp
   \set noChordSymbol = ""
-  
+
   R1*3
 
   {
@@ -29,16 +29,16 @@ unisonVoice = \relative c' {
     r4 a\< b c\! d1\mf~d4 c b a8(g8) b1
     r4 a\> g e d1 r4\! d\mp d^"holding back" e8(g8) g1~g2^"a tempo" r2
   }
-  
+
   R1*3
-  
+
   {
     r4 d\mf g a b1~b4 a g e d1
     r4 d g fis g1~g4 a b c8(b8) a1
     r4 a b c d1~d4 c b a8(g8) b1
     r4 a g e d1~d4 d\>^"holding back" d e8(g8)\! g1\p^"a tempo"
   }
-  
+
   R1*2
 }
 
@@ -49,7 +49,7 @@ unisonVoiceLyrics = \lyricmode {
       and have the gift __ to all in -- spire,
       And have not love; __ my words are __ vain,
       as sound -- ing brass, and hope -- less __ gain. __
-      
+
       Though I may give all I pos- sess,
       and striv- ing so my love pro- fess,
       But not be giv'n by love with- in,
@@ -60,7 +60,7 @@ unisonVoiceLyrics = \lyricmode {
       我 又 會 唱 天 使 之 歌，
       在 我 內 心， 卻 沒 有 愛，
       話 語 歌 聲， 都 屬 虛 空。
-      
+
       傾 我 所 有 賙 濟 貧 窮，
       焚 燒 己 身 在 所 不 惜，
       在 我 內 心 卻 沒 有 愛，
@@ -72,9 +72,9 @@ unisonVoiceLyrics = \lyricmode {
 sopranoVoice = \relative c' {
   \global
   \dynamicUp
-  
+
   R1*41
-  
+
   {
     r4^"Part 1 (melody)" d\mf g a b1~b4 a g e d1
     r4 d g fis g1~g4 a b c8(b8) a1
@@ -93,15 +93,15 @@ sopranoVoiceLyrics = \lyricmode {
       Our spir -- its long __ to be made __ whole.
       Let in -- ward love __ guide ev -- 'ry __ deed.
       By this we wor -- ship and are __ freed.
-      
-      A -- men, A -- men, A -- men, A -- men. __
+
+      A -- men, A -- men, A -- men, A -- men.
     }
     \new Lyrics \with { alignBelowContext = #"en" } {
       懇 求 聖 靈， 降 臨 我 心。
       感 化 訓 誨 使 我 完 全。
       心 中 有 愛 導 我 言 行。
       得 真 自 由， 讚 美 敬 拜。
-      
+
       阿 們， 阿 們， 阿 們， 阿 們。
     }
   >>
@@ -112,7 +112,7 @@ altoVoice = \relative c' {
   \dynamicUp
 
   R1*41
-  
+
   {
     r1
     r4^"Part 2 or instrument" d\mf g a8(b8) c1~c4 b a g d1
@@ -135,15 +135,15 @@ altoVoiceLyrics = \lyricmode {
       O come, spir -- it, come,
       Let in -- ward love, Let love guide ev -- 'ry deed.
       By this we wor -- ship, we __ are freed. __
-      
-      A -- men, A -- men. __
+
+      A -- men, A -- men.
     }
     \new Lyrics \with { alignBelowContext = #"en" } {
       懇 求 聖 靈， 降 臨 我 心，
       感 化 訓 誨 使 我 完 全。
       懇 求 聖 靈， 求 降 臨 我 心， 使 愛 導 我 言 行。
       得 真 自 由， 讚 美 敬 拜。
-      
+
       阿 們， 阿 們。
     }
   >>
@@ -163,7 +163,7 @@ right = \relative c' {
   <g b>4. d8 <g b>4 <fis a>
   <e g>4. b8 g' fis e d
   c4. d8 e2
-  
+
   % P2
   fis1
   r4 a\< <fis b> <g c>\!
@@ -263,13 +263,13 @@ right = \relative c' {
 
 left-g-major-bar = \relative c {
   \set tieWaitForNote = ##t
-  g8~ d'~ b'4~ <g, d' b'>2
+  g8~ d'~ \stemUp b'4~ \stemNeutral <g, d' b'>2
 }
 
 left = \relative c {
   \global
   \set tieWaitForNote = ##t
-  
+
   % P1
   \left-g-major-bar
   g8~ e'~ a4~ <g, e' a>2
@@ -304,7 +304,7 @@ left = \relative c {
   \left-g-major-bar
   << {
     g'8 a a g g b a g~
-    g8 a \change Staff = "right" d a'~ a d, \change Staff = "left" a g
+    g8 a \change Staff = "right" \stemDown d a'~ a d, \change Staff = "left" \stemUp a g
     g4 fis e2 ^"holding back"
   } \\ {
     <a, e'>1
@@ -393,36 +393,36 @@ chordNames = {
   \chordmode {
     \global
     \set noChordSymbol = ""
-    
+
     g a:m7 a:m7
-    
+
     {
       g g a:m7 g
       g e:m a:m7 d
       a:m7 g a:m7 g
       a:m7 d d g e:m
     }
-    
+
     c d g
-    
+
     {
       g g a:m7 g
       b:m e:m a:m d
       a:m g a:m7 g
       a:m7 d1*2 g1
     }
-    
+
     a:m7 a:m7
-    
+
     {
       g1*2 a1:m7 g1*2
       e1:m a:m7 d1*2
       g1 e:m7 g
       e:m7 d1*2 g1
     }
-    
+
     s1*2
-    
+
     {
       e2:m a2:m g2 d2
       g1 e:m c g
@@ -434,7 +434,7 @@ chordNames = {
   \new ChoirStaff <<
     % Chord
     \new ChordNames { \chordNames }
-    
+
     % Unison
     \new Staff \with {
       instrumentName = "Unison"
@@ -450,7 +450,7 @@ chordNames = {
         \unisonVoiceLyrics
       }
     }
-    
+
     % Alto
     \new Staff \with {
       instrumentName = "Alto"
@@ -466,7 +466,7 @@ chordNames = {
         \altoVoiceLyrics
       }
     }
-    
+
     % Soprano
     \new Staff \with {
       instrumentName = "Soprano"
@@ -482,7 +482,7 @@ chordNames = {
         \sopranoVoiceLyrics
       }
     }
-    
+
     % Piano
     \new PianoStaff \with {
       instrumentName = "Piano"
