@@ -24,49 +24,45 @@ unisonVoice = \relative c' {
   R1*3
 
   {
-    r4 d g a b1~b4 a g e d1
+    r4^"All voices in unison"\mp d g a b1~b4 a g e d1
     r4 d g fis g1~g4 a b c8(b8) a1
-    r4 a b c d1~d4 c b a8(g8) b1
-    r4 a g e d1 r4 d d e8(g8) g1~g2 r2
+    r4 a\< b c\! d1\mf~d4 c b a8(g8) b1
+    r4 a\> g e d1 r4\! d\mp d^"holding back" e8(g8) g1~g2^"a tempo" r2
   }
   
   R1*3
   
   {
-    r4 d g a b1~b4 a g e d1
+    r4 d\mf g a b1~b4 a g e d1
     r4 d g fis g1~g4 a b c8(b8) a1
     r4 a b c d1~d4 c b a8(g8) b1
-    r4 a g e d1~d4 d d e8(g8) g1
+    r4 a g e d1~d4 d\>^"holding back" d e8(g8)\! g1\p^"a tempo"
   }
+  
+  R1*2
 }
 
-verseUnisonVoice = \lyricmode {
+unisonVoiceLyrics = \lyricmode {
   <<
-    {
-      Though I may speak with brav- est fire,
-      and have the gift to all in- spire,
-      And have not love; my words are vain,
-      as sound- ing brass, and hope- less gain.
-    }
-    \new Lyrics {
-      \set associatedVoice = "singleVoice"
-      我 若 能 說 萬 人 方 言，
-      我 又 會 唱 天 使 之 歌，
-      在 我 內 心， 卻 沒 有 愛，
-      話 語 歌 聲， 都 屬 虛 空。
-    }
-  >>
-  <<
-    {
+    \new Lyrics = "en" {
+      Though I may speak __ with brav -- est fire,
+      and have the gift __ to all in -- spire,
+      And have not love; __ my words are __ vain,
+      as sound -- ing brass, and hope -- less __ gain. __
+      
       Though I may give all I pos- sess,
       and striv- ing so my love pro- fess,
       But not be giv'n by love with- in,
       the prof- it soon turns strange- ly thin.
     }
-    \new Lyrics {
-      \set associatedVoice = "singleVoice"
+    \new Lyrics \with { alignBelowContext = #"en" } {
+      我 若 能 說 萬 人 方 言，
+      我 又 會 唱 天 使 之 歌，
+      在 我 內 心， 卻 沒 有 愛，
+      話 語 歌 聲， 都 屬 虛 空。
+      
       傾 我 所 有 賙 濟 貧 窮，
-      焚 燒 己 身， 在 所 不 惜，
+      焚 燒 己 身 在 所 不 惜，
       在 我 內 心 卻 沒 有 愛，
       雖 捨 己 身 與 我 無 益。
     }
@@ -77,35 +73,87 @@ sopranoVoice = \relative c' {
   \global
   \dynamicUp
   
-  R1 * 41
+  R1*41
   
   {
-    r4 d g a b1~b4 a g e d1
-    r4 d g f g1~g4 a b c8(b8) a1
+    r4^"Part 1 (melody)" d\mf g a b1~b4 a g e d1
+    r4 d g fis g1~g4 a b c8(b8) a1
+    r4 a\f	 b c d1~d4 c b a8(g8) b1
+    r4 a g e d1~d4 d d^"holding back" e8(g8) g1^"a tempo"
+  }
+  {
+    r4 d(g a) b2. a4 g a8(b8 c2) b2\>^"rit." a\! g1\mp\>(g)(g)(g\fermata\pp)\!
   }
 }
 
-verseSopranoVoice = \lyricmode {
+sopranoVoiceLyrics = \lyricmode {
+  <<
+    \new Lyrics = "en" {
+      Come, spir -- it come, __ our hearts con -- trol,
+      Our spir -- its long __ to be made __ whole.
+      Let in -- ward love __ guide ev -- 'ry __ deed.
+      By this we wor -- ship and are __ freed.
+      
+      A -- men, A -- men, A -- men, A -- men. __
+    }
+    \new Lyrics \with { alignBelowContext = #"en" } {
+      懇 求 聖 靈， 降 臨 我 心。
+      感 化 訓 誨 使 我 完 全。
+      心 中 有 愛 導 我 言 行。
+      得 真 自 由， 讚 美 敬 拜。
+      
+      阿 們， 阿 們， 阿 們， 阿 們。
+    }
+  >>
 }
 
 altoVoice = \relative c' {
   \global
   \dynamicUp
-  % Music follows here.
-  R1*48
-  d1 d d d
+
+  R1*41
+  
+  {
+    r1
+    r4^"Part 2 or instrument" d\mf g a8(b8) c1~c4 b a g d1
+    r4 g a b c2(g4) e fis g a
+    d,4\f d'2 d,4 d b' g a b e,2.
+    e4 d g a b e,2.
+    g4 g fis e d a'2(g4^"holding back") c b^"a tempo"(g2.)
+  }
+  {
+    r1
+    r4 d (g a) b2. a4(~a4\>^"rit." g2 fis4)\! g1\mp\>(g)(g)(g\fermata\pp)\!
+  }
 }
 
-verseAltoVoice = \lyricmode {
-  % Lyrics follow here.
-  
+altoVoiceLyrics = \lyricmode {
+  <<
+    \new Lyrics = "en" {
+      Come, spir -- it come, __ our hearts con -- trol.
+      Our spir -- its long __ to be made whole.
+      O come, spir -- it, come,
+      Let in -- ward love, Let love guide ev -- 'ry deed.
+      By this we wor -- ship, we __ are freed. __
+      
+      A -- men, A -- men. __
+    }
+    \new Lyrics \with { alignBelowContext = #"en" } {
+      懇 求 聖 靈， 降 臨 我 心，
+      感 化 訓 誨 使 我 完 全。
+      懇 求 聖 靈， 求 降 臨 我 心， 使 愛 導 我 言 行。
+      得 真 自 由， 讚 美 敬 拜。
+      
+      阿 們， 阿 們。
+    }
+  >>
 }
 
 right = \relative c' {
   \global
-  % Music follows here.
+
   % P1
-  r4 r8 d <a' d>4 <d, a'>
+  r4\p r8 d <a' d>4 <d, a'>
   r4 r8 c <g' c>4 <c, g'>
   r4 r8 c <e a>4 <a, d>
   d4. d8 <b g'>4 <d a'>
@@ -118,8 +166,8 @@ right = \relative c' {
   
   % P2
   fis1
-  r4 a <fis b> <g c>
-  <b d>4. d,8 g a b a
+  r4 a\< <fis b> <g c>\!
+  <b d>4.\mf d,8 g a b a
   << {
     b8 c b a b a g e
   } \\ {
@@ -128,9 +176,9 @@ right = \relative c' {
   d4. d8 g fis e d
   c1
   d4 s s2
-  d2. c4
+  d2.\mp c4
   r4 r8 d b' a g fis
-  g4. b,8 g' fis e d
+  g4.^"a tempo" b,8 g' fis e d
   << {
     e2 r2
   } \\ {
@@ -155,7 +203,7 @@ right = \relative c' {
     a4 g fis e8 d
     d4 c e g
     g4 fis e d
-    d2. c4
+    d2.\>^"holding back" c4\!
   } \\ {
     g'2 b,
     d1
@@ -170,12 +218,10 @@ right = \relative c' {
     d1
     a2 g
   } >>
-  r4 r8 d' <a' d>4 <d, a'>
+  r4\p^"a tempo" r8 d' <a' d>4 <d, a'>
   r4 r8 c <g' c>4 <c, g'>
   r4 r8 c <e a>4 <a, d>
-
-  % P4
-  b4. d8 <b g'>4 <d a'>
+  b4.\mf d8 <b g'>4 <d a'>
   <g b>4. d8 g fis e d
   c4. e8 <d g>4 c
   c4 b <b g'> <d a'>
@@ -183,12 +229,10 @@ right = \relative c' {
   <e g>4. b8 g' fis e d
   c4. e8 g4 e
   fis1
-  r4 a <fis b> <g c>
+  r4\f a <fis b> <g c>
   <b d>4. d,8 g a b c
   << { b4 a2 g4 } \\ { c,2 e } >>
   d4. g8 <d a'>4 <g b>
-
-  % P5
   << {
     d4 c e g
     g4 fis e d
@@ -196,25 +240,25 @@ right = \relative c' {
   } \\ {
     a2 c
     d2 e4 d
-    \change Staff = "left" \stemUp a8 b a g \stemNeutral
+    \change Staff = "left" \stemUp a8 b a^"holding back" g \stemNeutral
     \change Staff = "right" g2
   } >>
-  b4. d8 <a' d>4 <d, a'>
+  b4.^"a tempo" d8 <a' d>4\> <d, a'>\!
   r4 r8 d g4 <d a'>
   <g b>2 q4 <d a'>4
   << {
     g4 e b' a~
-    a4 g2 fis4
+    a4\>^"rit." g2 fis4\!
   } \\ {
     b,2 c
     b a
   } \\ {
     s1 d1
   } >>
-  g4 r8 d b' a g fis
+  g4\mp^"a tempo" r8 d\> b' a g fis
   g4. d8 g fis e d
-  << { e2 r2 } \\ { e8 d c b d c b a } >>
-  b1\fermata
+  << { e2 r2 } \\ { e8 d c b d c^"rit." b a } >>
+  b1\fermata\pp\!
 }
 
 left-g-major-bar = \relative c {
@@ -224,8 +268,8 @@ left-g-major-bar = \relative c {
 
 left = \relative c {
   \global
-  % Music follows here.
   \set tieWaitForNote = ##t
+  
   % P1
   \left-g-major-bar
   g8~ e'~ a4~ <g, e' a>2
@@ -261,7 +305,7 @@ left = \relative c {
   << {
     g'8 a a g g b a g~
     g8 a \change Staff = "right" d a'~ a d, \change Staff = "left" a g
-    g4 fis e2
+    g4 fis e2 ^"holding back"
   } \\ {
     <a, e'>1
     <d, d'>1
@@ -343,8 +387,6 @@ left = \relative c {
   e,8~ b'~ g'4~ <e, b' g'>2
   << { r2 e' } \\ { c,1 } >>
   <g' d'>1\fermata
-
-
 }
 
 chordNames = {
@@ -388,43 +430,72 @@ chordNames = {
   }
 }
 
-unisonVoicePart = \new Staff \with {
-  instrumentName = "Unison"
-  midiInstrument = "choir aahs"
-} { \unisonVoice }
-\addlyrics { \verseUnisonVoice }
-
-sopranoVoicePart = \new Staff \with {
-  instrumentName = "Soprano"
-  midiInstrument = "choir aahs"
-} { \sopranoVoice }
-\addlyrics { \verseSopranoVoice }
-
-altoVoicePart = \new Staff \with {
-  instrumentName = "Alto"
-  midiInstrument = "choir aahs"
-} { \altoVoice }
-\addlyrics { \verseAltoVoice }
-
-pianoPart = \new PianoStaff \with {
-  instrumentName = "Piano"
-} <<
-  \new Staff = "right" \with {
-    midiInstrument = "acoustic grand"
-  } { \right \bar "|." }
-  \new Staff = "left" \with {
-    midiInstrument = "acoustic grand"
-  } { \clef bass \left \bar "|." }
->>
-
 \score {
-  <<
+  \new ChoirStaff <<
+    % Chord
     \new ChordNames { \chordNames }
-    \unisonVoicePart
-    \sopranoVoicePart
-    \altoVoicePart
-    \pianoPart
+    
+    % Unison
+    \new Staff \with {
+      instrumentName = "Unison"
+      midiInstrument = "choir aahs"
+    } {
+      \new Voice = "unison" {
+        \unisonVoice
+      }
+    }
+    \new Lyrics = "unison"
+    \context Lyrics = "unison" {
+      \lyricsto "unison" {
+        \unisonVoiceLyrics
+      }
+    }
+    
+    % Alto
+    \new Staff \with {
+      instrumentName = "Alto"
+      midiInstrument = "choir aahs"
+    } {
+      \new Voice = "alto" {
+        \altoVoice
+      }
+    }
+    \new Lyrics = "alto"
+    \context Lyrics = "alto" {
+      \lyricsto "alto" {
+        \altoVoiceLyrics
+      }
+    }
+    
+    % Soprano
+    \new Staff \with {
+      instrumentName = "Soprano"
+      midiInstrument = "choir aahs"
+    } {
+      \new Voice = "soprano" {
+        \sopranoVoice
+      }
+    }
+    \new Lyrics = "soprano"
+    \context Lyrics = "soprano" {
+      \lyricsto "soprano" {
+        \sopranoVoiceLyrics
+      }
+    }
+    
+    % Piano
+    \new PianoStaff \with {
+      instrumentName = "Piano"
+    } <<
+      \new Staff = "right" \with {
+        midiInstrument = "acoustic grand"
+      } { \right \bar "|." }
+      \new Staff = "left" \with {
+        midiInstrument = "acoustic grand"
+      } { \clef bass \left \bar "|." }
+    >>
   >>
+
   \layout {
     \context {
       \Staff
