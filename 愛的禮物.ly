@@ -441,57 +441,59 @@ chordNames = {
 }
 
 \score {
-  \new ChoirStaff <<
-    % Chord
-    \new ChordNames { \chordNames }
+  <<
+    \new ChoirStaff <<
+      % Chord
+      \new ChordNames { \chordNames }
 
-    % Unison
-    \new Staff \with {
-      instrumentName = "Unison"
-      midiInstrument = "choir aahs"
-    } {
-      \new Voice = "unison" {
-        \unisonVoice
+      % Unison
+      \new Staff \with {
+        instrumentName = "Unison"
+        midiInstrument = "choir aahs"
+      } {
+        \new Voice = "unison" {
+          \unisonVoice
+        }
       }
-    }
-    \new Lyrics = "unison"
-    \context Lyrics = "unison" {
-      \lyricsto "unison" {
-        \unisonVoiceLyrics
+      \new Lyrics = "unison"
+      \context Lyrics = "unison" {
+        \lyricsto "unison" {
+          \unisonVoiceLyrics
+        }
       }
-    }
 
-    % Alto
-    \new Staff \with {
-      instrumentName = "Alto"
-      midiInstrument = "choir aahs"
-    } {
-      \new Voice = "alto" {
-        \altoVoice
+      % Alto
+      \new Staff \with {
+        instrumentName = "Alto"
+        midiInstrument = "choir aahs"
+      } {
+        \new Voice = "alto" {
+          \altoVoice
+        }
       }
-    }
-    \new Lyrics = "alto"
-    \context Lyrics = "alto" {
-      \lyricsto "alto" {
-        \altoVoiceLyrics
+      \new Lyrics = "alto"
+      \context Lyrics = "alto" {
+        \lyricsto "alto" {
+          \altoVoiceLyrics
+        }
       }
-    }
 
-    % Soprano
-    \new Staff \with {
-      instrumentName = "Soprano"
-      midiInstrument = "choir aahs"
-    } {
-      \new Voice = "soprano" {
-        \sopranoVoice
+      % Soprano
+      \new Staff \with {
+        instrumentName = "Soprano"
+        midiInstrument = "choir aahs"
+      } {
+        \new Voice = "soprano" {
+          \sopranoVoice
+        }
       }
-    }
-    \new Lyrics = "soprano"
-    \context Lyrics = "soprano" {
-      \lyricsto "soprano" {
-        \sopranoVoiceLyrics
+      \new Lyrics = "soprano"
+      \context Lyrics = "soprano" {
+        \lyricsto "soprano" {
+          \sopranoVoiceLyrics
+        }
       }
-    }
+    >>
 
     % Piano
     \new PianoStaff \with {
