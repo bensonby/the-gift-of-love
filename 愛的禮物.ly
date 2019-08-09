@@ -153,7 +153,7 @@ right = \relative c' {
   \global
 
   % P1
-  r4\p r8 d <a' d>4 <d, a'>
+  r4 r8 d <a' d>4 <d, a'>
   r4 r8 c <g' c>4 <c, g'>
   r4 r8 c <e a>4 <a, d>
   d4. d8 <b g'>4 <d a'>
@@ -166,8 +166,8 @@ right = \relative c' {
 
   % P2
   fis1
-  r4 a\< <fis b> <g c>\!
-  <b d>4.\mf d,8 g a b a
+  r4 a <fis b> <g c>
+  <b d>4. d,8 g a b a
   << {
     b8 c b a b a g e
   } \\ {
@@ -176,7 +176,7 @@ right = \relative c' {
   d4. d8 g fis e d
   c1
   d4 s s2
-  d2.\mp c4
+  d2. c4
   r4 r8 d b' a g fis
   g4.^"a tempo" b,8 g' fis e d
   << {
@@ -203,7 +203,7 @@ right = \relative c' {
     a4 g fis e8 d
     d4 c e g
     g4 fis e d
-    d2.\>^"holding back" c4\!
+    d2.\tempo "holding back" c4
   } \\ {
     g'2 b,
     d1
@@ -218,10 +218,10 @@ right = \relative c' {
     d1
     a2 g
   } >>
-  r4\p^"a tempo" r8 d' <a' d>4 <d, a'>
+  r4\tempo "a tempo" r8 d' <a' d>4 <d, a'>
   r4 r8 c <g' c>4 <c, g'>
   r4 r8 c <e a>4 <a, d>
-  b4.\mf d8 <b g'>4 <d a'>
+  b4. d8 <b g'>4 <d a'>
   <g b>4. d8 g fis e d
   c4. e8 <d g>4 c
   c4 b <b g'> <d a'>
@@ -229,7 +229,7 @@ right = \relative c' {
   <e g>4. b8 g' fis e d
   c4. e8 g4 e
   fis1
-  r4\f a <fis b> <g c>
+  r4 a <fis b> <g c>
   <b d>4. d,8 g a b c
   << { b4 a2 g4 } \\ { c,2 e } >>
   d4. g8 <d a'>4 <g b>
@@ -243,22 +243,22 @@ right = \relative c' {
     \change Staff = "left" \stemUp a8 b a^"holding back" g \stemNeutral
     \change Staff = "right" g2
   } >>
-  b4.^"a tempo" d8 <a' d>4\> <d, a'>\!
+  b4.^"a tempo" d8 <a' d>4 <d, a'>
   r4 r8 d g4 <d a'>
   <g b>2 q4 <d a'>4
   << {
     g4 e b' a~
-    a4\>^"rit." g2 fis4\!
+    a4^"rit." g2 fis4
   } \\ {
     b,2 c
     b a
   } \\ {
     s1 d1
   } >>
-  g4\mp^"a tempo" r8 d\> b' a g fis
+  g4^"a tempo" r8 d b' a g fis
   g4. d8 g fis e d
   << { e2 r2 } \\ { e8 d c b d c^"rit." b a } >>
-  b1\fermata\pp\!
+  b1\fermata
 }
 
 left-g-major-bar = \relative c {
@@ -389,6 +389,16 @@ left = \relative c {
   <g' d'>1\fermata
 }
 
+holding-back = \markup { "holding back" }
+dynamics = {
+  s1\p s1*10 s4 s2\< s4\! s1\mf s1*4 s1\mp
+  s1*19 s2.\> s4\! s1\p s1*2
+  s1\mf s1*7
+  s1\f s1*6
+  s2 s4\> s4\! s1*3 s2.\> s4\! s4.\mp s8\> s2 s1 s2. s4\! s1\pp
+
+}
+
 chordNames = {
   \chordmode {
     \global
@@ -490,6 +500,7 @@ chordNames = {
       \new Staff = "right" \with {
         midiInstrument = "acoustic grand"
       } { \right \bar "|." }
+      \new Dynamics = "Dynamics_pf" \dynamics
       \new Staff = "left" \with {
         midiInstrument = "acoustic grand"
       } { \clef bass \left \bar "|." }
